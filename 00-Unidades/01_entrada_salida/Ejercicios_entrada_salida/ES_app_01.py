@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Julieta
+apellido: Bruzzo
 ---
 Ejercicio: entrada_salida_01
 ---
@@ -26,7 +26,7 @@ class App(customtkinter.CTk): #indentanciones (sangria)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        alert("titulo","mensaje")
+        alert("Alerta","Esto no anda, funciona")
         pass
 #da un sentindo al boton
 
