@@ -33,6 +33,19 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+
+        sueldo_str = self.txt_sueldo.get()
+        sueldo = float(sueldo_str)        
+
+        importe = sueldo * 15 / 100 # regla de 3 simples
+        #importe = sueldo * 0.15------ Le soluciono la cuenta a la maquina, me aorro el 15/100
+        #importe = sueldo * 1.15 
+
+        resultado = sueldo + importe
+        self.txt_sueldo.delete(0, "end")
+
+        alert("Trabajador", f"Su sueldo con el importe agregado es de ${resultado}" )
+
         pass
         
     

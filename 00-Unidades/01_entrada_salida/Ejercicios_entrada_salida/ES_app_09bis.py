@@ -39,6 +39,20 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+
+        sueldo_str = self.txt_sueldo.get()
+        impuesto_str = self.txt_incremento.get()
+
+        sueldo = float(sueldo_str)
+        impuesto = float(impuesto_str)
+
+        cuenta = sueldo * impuesto / 100
+        resultado = cuenta + sueldo
+
+        mensaje = f"Su sueldo acutual es de: {resultado}"
+
+        alert("", mensaje)
+
         pass
         
     

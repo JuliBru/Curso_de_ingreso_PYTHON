@@ -43,11 +43,15 @@ class App(customtkinter.CTk):
         
         nombre = self.txt_nombre.get()
         edad = self.txt_edad.get()
-        
+
+        mensaje = f"Usted se llama {nombre} y su edad es de {edad} años"
+        #creando una var. ya con el msj. ayudamos al alert
+
+
         self.txt_nombre.delete(0,"end")
         self.txt_edad.delete(0,"end")
 
-        alert("Cliente", f"Usted se llama {nombre} y su edad es de {edad} años")
+        alert("Cliente", mensaje )
 
         
     
