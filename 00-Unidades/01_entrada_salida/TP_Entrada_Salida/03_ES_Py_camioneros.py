@@ -14,9 +14,13 @@ Enunciado:
 
 3.	Para el departamento de logística:
 
-	A.	Es necesario saber la cantidad camiones que harian falta para transportar los materiales que se utilizarán para la construcción de un edificio. Para ello, se ingresa la cantidad de toneladas necesarias de materiales a transportar. El programa deberá informar la cantidad de camiones, sabiendo que cada uno de ellos puede transportar por viaje 3500kg
+	A.	Es necesario saber la cantidad camiones que harian falta para transportar los materiales que se utilizarán para la 
+    construcción de un edificio. Para ello, se ingresa la cantidad de toneladas necesarias de materiales a transportar. 
+    El programa deberá informar la cantidad de camiones, sabiendo que cada uno de ellos puede transportar por viaje 3500kg
 
-    B.	A partir del ingreso de la cantidad de kilómetros que tiene que recorrer estos camiones para llegar al destino de la obra, necesitamos que el programa informe cual es el tiempo (en horas) que tardará cada uno de los camiones, si sabemos que cada camión puede ir a una velocidad máxima y constante de 90 km/h  
+    B.	A partir del ingreso de la cantidad de kilómetros que tiene que recorrer estos camiones para llegar al destino de la 
+    obra, necesitamos que el programa informe cual es el tiempo (en horas) que tardará cada uno de los camiones, si sabemos 
+    que cada camión puede ir a una velocidad máxima y constante de 90 km/h  
 
 '''
 
@@ -38,7 +42,7 @@ class App(customtkinter.CTk):
         
         self.txt_kilometros = customtkinter.CTkEntry(master=self)
         self.txt_kilometros.grid(row=1, column=1)
-       
+
         self.btn_cantidad_camiones = customtkinter.CTkButton(master=self, text="Calcular cantidad de camiones", command=self.btn_cantidad_camiones_on_click)
         self.btn_cantidad_camiones.grid(row=3, pady=10, padx=30 ,columnspan=2, sticky="nsew")
         
@@ -46,9 +50,41 @@ class App(customtkinter.CTk):
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
+        toneladas_str = self.txt_toneladas.get()
+        toneladas = float(toneladas_str)
+
+        camiones = toneladas / 3500 
+
+        import math
+        redondeo = math.ceil(camiones)
+        
+
+
+        mensaje = "Para poder transportar " + str(toneladas) + "kg se necesitaran: {} " .format(redondeo) + " camiones."
+
+        self.txt_toneladas.delete(0, "end")
+
+        alert("Camioneros",mensaje)
+        
         pass
 
     def btn_tiempo_llegada_on_click(self):
+
+        kilómetros_str = self.txt_kilometros.get()
+        kilometros = float(kilómetros_str)
+
+        tiempo = kilometros / 90
+
+        import math
+        redondeo = math.ceil(tiempo)
+
+        mensaje = "Para recorer " + str(kilometros) + " tardaran un total de: {}" .format(redondeo) +"hrs."
+
+        self.txt_kilometros.delete(0,"end")
+
+        alert("Camioneros", mensaje)
+
+
         pass
     
     

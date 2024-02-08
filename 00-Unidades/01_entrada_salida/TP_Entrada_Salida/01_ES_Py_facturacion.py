@@ -52,12 +52,67 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
+        valor1_str = self.txt_importe_1.get()
+        valor2_str = self.txt_importe_2.get()
+        valor3_str = self.txt_importe_3.get()
+
+        valor1 = float(valor1_str)
+        valor2 = float(valor2_str)
+        valor3 = float(valor3_str)
+
+        resultado = valor1 + valor2 + valor3
+        mensaje = f"La suma de los 3 productos es igual a: {resultado}"
+
+        self.txt_importe_1.delete(0, "end")
+        self.txt_importe_2.delete(0, "end")
+        self.txt_importe_3.delete(0, "end")
+
+        alert("Cliente", mensaje)
+
+
         pass
 
     def btn_promedio_on_click(self):
+        valor1_str = self.txt_importe_1.get()
+        valor2_str = self.txt_importe_2.get()
+        valor3_str = self.txt_importe_3.get()
+
+        valor1 = float(valor1_str)
+        valor2 = float(valor2_str)
+        valor3 = float(valor3_str)
+
+        cuenta = valor1 + valor2 + valor3
+        resultado = cuenta / 3
+        mensaje = f"El promedio es de: {resultado}"
+        
+        self.txt_importe_1.delete(0, "end")
+        self.txt_importe_2.delete(0, "end")
+        self.txt_importe_3.delete(0, "end")
+
+        alert("Cliente", mensaje)
+
         pass
 
     def btn_total_iva_on_click(self):
+        valor1_str = self.txt_importe_1.get()
+        valor2_str = self.txt_importe_2.get()
+        valor3_str = self.txt_importe_3.get()
+
+        valor1 = float(valor1_str)
+        valor2 = float(valor2_str)
+        valor3 = float(valor3_str)
+
+        cuenta = valor1 + valor2 + valor3
+        cuenta1 = cuenta * 0.21
+        resultado = cuenta + cuenta1
+        mensaje = f"El valor final de los 3 productos, más IVA, es de:{resultado}"
+
+        self.txt_importe_1.delete(0, "end")
+        self.txt_importe_2.delete(0, "end")
+        self.txt_importe_3.delete(0, "end")
+
+        alert("Cliente", mensaje)
+
         pass      
     
 if __name__ == "__main__":
