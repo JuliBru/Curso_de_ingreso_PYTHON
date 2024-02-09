@@ -53,14 +53,14 @@ class App(customtkinter.CTk):
         toneladas_str = self.txt_toneladas.get()
         toneladas = float(toneladas_str)
 
-        camiones = toneladas / 3500 
+        camiones = (toneladas * 1000) / 3500 
 
         import math
         redondeo = math.ceil(camiones)
         
 
 
-        mensaje = "Para poder transportar " + str(toneladas) + "kg se necesitaran: {} " .format(redondeo) + " camiones."
+        mensaje = "Para poder transportar " + str(toneladas) + " toneladas se necesitaran: {} " .format(redondeo) + " camiones."
 
         self.txt_toneladas.delete(0, "end")
 
@@ -75,10 +75,10 @@ class App(customtkinter.CTk):
 
         tiempo = kilometros / 90
 
-        import math
-        redondeo = math.ceil(tiempo)
 
-        mensaje = "Para recorer " + str(kilometros) + " tardaran un total de: {}" .format(redondeo) +"hrs."
+        #redondeo = (tiempo)
+
+        mensaje = "Para recorer " + str(kilometros) + "km tardaran un total de: {:.2f}" .format(tiempo) +"hrs."
 
         self.txt_kilometros.delete(0,"end")
 
