@@ -11,7 +11,8 @@ apellido:
 Ejercicio: for_08
 ---
 Enunciado:
-Al presionar el botón 'Mostrar' pedir un número. Mostrar cada número primo entre 1 y el número ingresado, e informar la cantidad de números primos encontrados.
+Al presionar el botón 'Mostrar' pedir un número. Mostrar cada número primo entre 1 y el número ingresado, 
+e informar la cantidad de números primos encontrados.
 '''
 
 class App(customtkinter.CTk):
@@ -26,6 +27,24 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        numero = prompt("numero", "Ingrese un numero")
+        numero = int(numero)
+        cantidad_primos = 0
+        for i in range(2, numero+1):
+                    contador = 0
+                    for j in range(2, i+1): 
+                        if i % j == 0:
+                            contador += 1 
+                    if contador < 2:   
+                        cantidad_primos += 1
+                        print(i)
+
+        
+            
+
+            
+                
+        #print(contador_nro_primos)
         pass
     
 if __name__ == "__main__":

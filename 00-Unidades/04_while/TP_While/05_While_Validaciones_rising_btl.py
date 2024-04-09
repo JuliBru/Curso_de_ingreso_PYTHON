@@ -56,6 +56,39 @@ class App(customtkinter.CTk):
 
     def btn_validar_on_click(self):
 
+        apellido = prompt("UTN", "Ingrese su apellido")
+        edad = prompt("UTN", "Ingrese su edad")        
+        edad = int(edad)
+        estado = prompt("UTN", "Ingrese su estado civil (Primer letra con mayuscula)")
+        nro_legajo = prompt("UTN", "Ingrese su número de legajo (4 digitos)")
+        nro_legajo = int(nro_legajo)
+
+        while estado != "Soltero" and estado != "Casado" and estado != "DIvorciado" and estado != "Viudo" and estado != "Soltera" and estado != "Casada" and estado != "DIvorciada" and estado != "Viuda":
+            estado = prompt("Error", "Reingrese su estado civil (Primer letra con mayuscula)")
+
+        while edad < 18 or edad > 90:
+            edad = prompt("Error", "Reingrese su edad")
+            edad = int(edad)
+
+        while nro_legajo < 999 or nro_legajo > 10000:
+            nro_legajo = prompt("Error", "Reingrese su número de legajo (4 digitos)")
+            nro_legajo = int(nro_legajo)
+
+        
+        self.txt_apellido.delete(0,"end")
+        self.txt_edad.delete(0,"end")
+        self.txt_tipo.delete(0,"end")
+        self.txt_legajo.delete(0,"end")
+
+        self.txt_apellido.insert(0, apellido)
+        self.txt_edad.insert(0, edad)
+        self.txt_tipo.insert(0, estado)
+        self.txt_legajo.insert(0, nro_legajo)
+
+
+            
+
+
         
         pass
 

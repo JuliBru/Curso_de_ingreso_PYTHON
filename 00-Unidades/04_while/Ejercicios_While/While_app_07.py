@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
             if numero== None:
                 break
 
-            numero = float(numero)
+            numero = int(numero)
 
             
             contador +=1 

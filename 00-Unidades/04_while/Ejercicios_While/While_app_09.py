@@ -54,12 +54,12 @@ class App(customtkinter.CTk):
             if contador == 0:
                 maximo = numero
                 minimo = numero
-
-            if numero > maximo:
-                maximo = numero
-        
-            if numero < minimo:
-                minimo = numero
+            else:
+                if numero > maximo:
+                    maximo = numero
+            
+                if numero < minimo:
+                    minimo = numero
 
         self.txt_maximo.insert(0, maximo)
         self.txt_minimo.insert(0, minimo)

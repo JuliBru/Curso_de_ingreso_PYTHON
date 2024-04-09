@@ -59,7 +59,6 @@ class App(customtkinter.CTk):
             
             if numero == 0:
                 break
-        
         self.txt_producto.insert(0, producto)
         self.txt_suma_acumulada.insert(0, suma)
         pass
